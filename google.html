@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Tab</title>
+   
+
+    <!-- for footer media symbols -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        class="css" />
+
+    <!-- for google material-icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            height: auto;
+            width: 100%;
+        }
+
+        /* starting style for nav bar */
+
+        .navbar {
+            /* background-color: yellow; */
+            background: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: right;
+        }
+
+        .navbar ul {
+            display: flex;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar li {
+            margin: 5px 8px;
+            list-style: none;
+        }
+
+        .navbar img {
+            width: 25px;
+            clip-path: circle();
+            margin-top: 5px;
+
+        }
+
+        .apps i {
+            color: white;
+        }
+
+        .bg {
+            background-image: url("google.jpg");
+            height: 100vh;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: fixed;
+        }
+
+        .navbar .links {
+            color: white;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        .navbar .links:hover {
+            text-decoration: underline;
+        }
+
+        .navbar .material-icons {
+            /* background-color: red; */
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        /* style for google heading start */
+
+        .heading {
+            position: absolute;
+            display: flex;
+            /* background-color: lightcyan; */
+            height: 190px;
+            width: 100%;
+            align-items: baseline;
+            justify-content: center;
+            position: fixed;
+
+        }
+
+        .heading h1 {
+
+            color: white;
+            padding-top: 70px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 70px;
+            background: none;
+            font-weight: 600;
+        }
+
+
+        /* style for searchbar */
+        .searchbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: white; */
+            margin-top: 192px;
+            height: 35px;
+        }
+
+        .searchbox .searchbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            width: 400px;
+            height: 35px;
+            padding: 0 30px 0 30px;
+            border-radius: 17px;
+            min-width: 200px;
+        }
+
+        .searchbar span {
+            font-size: 15px;
+            color: lightcoral;
+        }
+
+        .searchbar input {
+            width: 200px;
+            height: 35px;
+            border: none;
+            border-color: none;
+
+        }
+
+        .searchbar #mic:hover {
+            color: blue;
+            cursor: pointer;
+        }
+
+        .searchbar #search:hover {
+            color: black;
+        }
+
+        /* .searchbox input{
+            width: 400px;
+            height: 35px;
+            padding-left: 30px;
+            border-radius: 17px;
+            border: none;
+        } */
+
+        /* style for media icons */
+        .media-container {
+            display: flex;
+            /* background-color: white; */
+            background: none;
+            height: 200px;
+            width: 100%;
+            justify-content: center;
+
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 280px;
+            height: 190px;
+
+        }
+
+        /* for wrapper div and sizing  */
+        /* .wrapper>div {
+            background-color: lightpink;
+            border: 1px solid red;
+
+        } */
+
+        .iconbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            background-color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -10px;
+            position: absolute;
+        }
+
+        .circle img {
+            width: 20px;
+
+        }
+
+        .iconbox a {
+            position: relative;
+            margin-top: 60px;
+            font-size: 10px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-decoration: none;
+            color: white;
+        }
+
+        .iconbox:hover {
+            background: #000;
+            cursor: pointer;
+        }
+
+        /* style for footer contents */
+        .footer {
+            margin-top: 70px;
+            display: flex;
+            /* background-color: red; */
+            justify-content: space-between;
+        }
+
+        .footer img {
+            width: 15px;
+            rotate: 45deg;
+            margin-top: 3px;
+            margin-right: 5px;
+        }
+
+        .footer ul {
+
+            display: flex;
+            margin-left: 30px;
+        }
+
+        .footer li {
+            list-style: none;
+
+        }
+
+        .footer a {
+            font-size: 13px;
+            color: white;
+        }
+
+        .footer .pencil {
+            display: flex;
+            margin-right: 20px;
+            color: white;
+            font-size: 10px;
+            justify-content: center;
+            align-items: center;
+            width: 22px;
+
+        }
+
+        .footer .pencil:hover {
+            background-color: white;
+            color: black;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bg">
+            <div class="navbar">
+                <ul>
+                    <li><a class="links" href="#">Gmail</a></li>
+                    <li><a class="links" href="#">Images</a></li>
+                    <li class="apps">
+                        <a href="#">
+                            <i title="Google Apps" class="material-icons">apps</i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"><img title="Google Account " src="rj.jpg" /></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="heading">
+                <h1>Google</h1>
+            </div>
+            <div class="searchbox">
+                <div class="searchbar">
+                    <span id="search">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <span id="search-text">
+                        <input type="text" placeholder="Search Google or type a URL">
+                    </span>
+                    <span id="mic"> <i class="fa fa-microphone"></i></span>
+                </div>
+                <!-- <label> 
+                    <input type="text" placeholder="Search Google or type URL" >
+                </label> -->
+
+            </div>
+            <div class="media-container">
+                <div class="wrapper">
+                    <div class="iconbox">
+                        <div class="circle">
+                            <img src="translator.png" alt="">
+
+                        </div>
+                        <a href="#">Google trans...</a>
+                    </div>
+                    <div class="iconbox">
+                        <div class="circle">
+                            <img src="rmbg.png" alt="">
+                        </div>
+                        <a href="#">Remove Bg</a>
+                    </div>
+                    <div class="iconbox">
+                        <div class="circle">
+                            <img src="sarkari.png" alt="">
+                        </div>
+                        <a href="#">Sarkari</a>
+                    </div>
+                    <div class="iconbox">
+                        <div class="circle">
+                            <img src="youtube.png" alt="">
+                        </div>
+                        <a href="#">YouTube</a>
+                    </div>
+                    <div class="iconbox">
+                        <div class="circle">
+                            <img src="abcd.png" alt="">
+                        </div>
+                        <a href="#">ABCD pdf</a>
+                    </div>
+                    <div class="iconbox">
+                        <div class="circle">
+                            <i class="fa fa-plus"></i>
+                        </div>
+                        <a href="#">Add shortcut</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <ul>
+                    <li>
+                        <a href="#"><img src="link3.jpg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Photo by NASA Image Library</a>
+                    </li>
+                </ul>
+                <div class="pencil">
+                    <i title="Customize this page" class="fa fa-pencil"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
